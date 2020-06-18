@@ -32,3 +32,6 @@ def team(request):
 def achievements(request):
     achievement=achievementss.objects.all()
     return render(request,'achievements.html',{'achievement':achievement})
+
+def articles(request):
+    return render(request,'articlenew.html')
