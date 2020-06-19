@@ -14,6 +14,7 @@ class faculty(models.Model):
     name=models.CharField(max_length=50)
     img=models.ImageField()
     desc=models.TextField()
+    post=models.TextField(default="post updated soon")
     def __str__(self):
         return self.name
 

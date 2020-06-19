@@ -75,6 +75,62 @@
         #colbt:hover {
             background-color: rgb(0, 143, 156);
         }
+  
+  
+  .text{
+    font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight:800;
+    text-transform:uppercase;
+  }
+  .fourthtextcolor{
+    color:rgb(180,188,406);
+    
+  }
+  .thirdtextcolor{
+    color:rgb(192,192,192);
+  }
+  .head{
+    font-family:sans-serif;
+    font-size: 34px;
+    text-transform:uppercase;
+    font-weight:900;
+  }
+  .fourthhead{
+  color: rgb(228,234,252);
+  }
+  .thirdhead{
+    color: rgb(210,210,210);
+  }
+  .fourthbg{
+          background-color:rgb(0,34,78);
+        }
+  .fourth{
+          border:4px solid gold;
+          border-radius:15px
+        }
+  .third{
+      border:4px solid rgb(192,192,192);
+          border-radius:15px;
+         
+  }
+  .faculty{
+ border:4px solid rgb(74,26,52);
+          border-radius:15px;
+  }
+  .facultytextcolor{
+    color:rgb(80,80,80);
+  }
+  .facultydesc{
+    font-size:18px;
+      
+  }
+  .facultytextcolor2{
+    color:rgb(130,130,130);
+    text-transform:uppercase;
+    font-size:11px;
+    font-weight:400;
+  }
     </style>
 
 </head>
@@ -134,13 +190,14 @@
 
     <div>
         {% for f in fac %}
-        <div class="container row mt-5 mx-auto text-center shadow mb-5 bg-light rounded">
+        <div class="container row mt-5 mx-auto text-center shadow mb-5 bg-transparent rounded">
             <div class="col-lg-3 col-sm-12 my-4">
-                <img src="{{ f.img.url }}" height="180px" width="200px">
-                <p class="mt-2" id="neha">{{ f.name }}</p>
+                <img src="{{ f.img.url }}"class="faculty" height="180px" width="200px">
+                <p class="mt-2 text mb-0 facultytextcolor" id="neha">{{ f.name }}</p>
+                <p class="text-center facultytextcolor2">{{f.post}}</p>
             </div>
             <div class="col-lg-9  my-4">
-                <p class="text-justify">{{ f.desc }} </p>
+                <p class="text-justify facultydesc">{{ f.desc }} </p>
             </div>
         </div>
         {% endfor %}
@@ -149,18 +206,19 @@
 
     <div>
         
-        <div class="container mt-5 text-center shadow p-3 mb-5 bg-info rounded">
-            <h2 class="my-5">Final Year</h2>
-        {% for i in fourth %}
+        <div class="container mt-5 text-center shadow p-3 mb-5  rounded fourthbg">
+            <h2 class="my-5 head fourthhead">Final Year</h2>
+       
             <div class="row">
+             {% for i in fourth %}
                 <div class="col-lg-3 col-md-4  my-4" id="neha">
-                    <img src="1.jpg" height="200px" width="200px">
-                    <p class="mt-2">Sumit</p>
+                    <img src="{{i.img.url}}" height="200px" width="200px" class="fourth">
+                    <p class="mt-2 text fourthtextcolor">{{i.name}}</p>
                 </div>
 
-               
+                    {% endfor %}
             </div>
-              {% endfor %}
+         
 
         </div>
       
@@ -169,13 +227,13 @@
 
 
         <div class="container mt-5 text-center shadow p-3 mb-5 bg-dark rounded">
-            <h2 class="my-5">Third Year</h2>
+            <h2 class="my-5 head thirdhead">Third Year</h2>
         
             <div class="row">
             {% for i in third %}
                 <div class="col-lg-3 col-md-4 text-white my-4" id="neha">
-                    <img src="{{i.img.url}}" height="200px" width="200px">
-                    <p class="mt-2">{{ i.name }}</p>
+                    <img src="{{i.img.url}}" height="200px"class="third" width="200px">
+                    <p class="mt-2 text thirdtextcolor">{{ i.name }}</p>
                 </div>
             {% endfor %}
             </div>
