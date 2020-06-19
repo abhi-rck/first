@@ -137,6 +137,28 @@
     font-size:12px;
     font-weight:400;
   }
+  .fourthtext2{
+  color:rgb(180,188,406);
+     font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-weight:200;
+     font-size:12px;
+     text-transform:uppercase;
+       text-shadow: 2px 2px 4px #000000;
+  }
+  .thirdtext2{
+color:rgb(192,192,192);
+   
+     font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-weight:200;
+     font-size:12px;
+     text-transform:uppercase;
+       text-shadow: 2px 2px 4px #000000;
+
+
+  }
+  .thirdbg{
+    background-color:rgb(25,25,25);
+  }
     </style>
 
 </head>
@@ -219,7 +241,8 @@
              {% for i in fourth %}
                 <div class="col-lg-3 col-md-4  my-4" id="neha">
                     <img src="{{i.img.url}}" height="200px" width="200px" class="fourth">
-                    <p class="mt-2 text fourthtextcolor">{{i.name}}</p>
+                    <p class="mt-2 mb-0 text fourthtextcolor">{{i.name}}</p>
+                    <p class="text-center fourthtext2">{{i.branch}}</p>
                 </div>
 
                     {% endfor %}
@@ -232,14 +255,15 @@
 
 
 
-        <div class="container mt-5 text-center shadow p-3 mb-5 bg-dark rounded">
+        <div class="container mt-5 text-center shadow p-3 mb-5 thirdbg rounded">
             <h2 class="my-5 head thirdhead">Third Year</h2>
         
             <div class="row">
             {% for i in third %}
                 <div class="col-lg-3 col-md-4 text-white my-4" id="neha">
                     <img src="{{i.img.url}}" height="200px"class="third" width="200px">
-                    <p class="mt-2 text thirdtextcolor">{{ i.name }}</p>
+                    <p class="mt-2 mb-0 text thirdtextcolor">{{ i.name }}</p>
+                    <p class="text-center thirdtext2">{{i.branch}}</p>
                 </div>
             {% endfor %}
             </div>
@@ -257,6 +281,7 @@
                 <div class="col-lg-3 col-md-4  my-4 text-white" id="neha">
                     <img src="{{i.img.url}}"class="border border-dark" height="200px" width="200px">
                     <p class="mt-2">{{i.name}}</p>
+                   <pre class="text-center ">{{i.branch}}</pre>
                 </div>
 
  {% endfor %}
@@ -274,6 +299,7 @@
                 <div class="col-lg-3 col-md-4  my-4" id="neha">
                     <img src="{{i.img.url}}" height="200px" width="200px">
                     <p class="mt-2">{{i.name}}</p>
+                    <pre class="text-center">{{i.branch}}</pre>
                 </div>
 
                 

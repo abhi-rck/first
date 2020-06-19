@@ -21,30 +21,35 @@ class faculty(models.Model):
 class fourthyear(models.Model):
     name=models.CharField(max_length=50)
     img=models.ImageField()
+    branch=models.TextField(default="NA")
     def __str__(self):
         return self.name
 
 class thirdyear(models.Model):
     name=models.CharField(max_length=50)
     img=models.ImageField()
+    branch=models.TextField(default="NA")
     def __str__(self):
         return self.name
 
 class secondyear(models.Model):
     name=models.CharField(max_length=50)
     img=models.ImageField()
+    branch=models.TextField(default="NA")
     def __str__(self):
         return self.name
 
 class firstyear(models.Model):
     name=models.CharField(max_length=50)
     img=models.ImageField()
+    branch=models.TextField(default="NA")
     def __str__(self):
         return self.name
 
 class achievementss(models.Model):
     name=models.CharField(max_length=50)
     desc=models.TextField()
+    
  
     def _str_(self):
         return str(self.name)
