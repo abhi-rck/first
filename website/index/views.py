@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import seeq,faculty,fourthyear,thirdyear,secondyear,firstyear,achievementss
+from .models import seeq,faculty,fourthyear,thirdyear,secondyear,firstyear,achievementss,developers
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -26,8 +26,9 @@ def team(request):
     third=thirdyear.objects.all()
     second=secondyear.objects.all()
     first=firstyear.objects.all()
+    dev=developers.objects.all()
 
-    return render(request,'team.html',{'fac':fac ,'fourth':fourth,'third':third,'second':second,'first':first})
+    return render(request,'team.html',{'fac':fac ,'fourth':fourth,'third':third,'second':second,'first':first, 'dev':dev})
 
 def achievements(request):
     achievement=achievementss.objects.all()

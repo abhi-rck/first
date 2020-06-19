@@ -54,5 +54,14 @@ class achievementss(models.Model):
     def _str_(self):
         return str(self.name)
 
+class developers(models.Model):
+    name=models.CharField(max_length=50)
+    img=models.ImageField()
+    year=models.TextField()
+    branch=models.TextField(default="NA")
+
+    def __str__(self):
+        return self.name
+
     
 
