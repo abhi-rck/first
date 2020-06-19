@@ -138,11 +138,11 @@
   .facultytextcolor2{
     color:rgb(130,130,130);
     
-    font-size:12px;
+    font-size:13px;
     font-weight:400;
   }
   .fourthtext2{
-  color:rgb(180,188,406);
+  color:rgb(170,180,406);
      font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
      font-weight:200;
      font-size:12px;
@@ -167,10 +167,10 @@ color:rgb(180,180,180);
 
   .secondbg{
    
-    background-image:linear-gradient(rgb(191, 0, 22),black);
+    background-image:linear-gradient(#5D001E,black);
   }
    .secondtext2{
-     color:rgb(234, 139, 25);
+     color:#E3AFBC;
      font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
      font-weight:200;
      font-size:12px;
@@ -187,11 +187,18 @@ color:rgb(180,180,180);
           border-radius:15px;
   }
     .secondtextcolor{
-    color:rgb(225, 160, 25);
+    color:#9A173B;
     text-shadow: 2px 2px 4px #000000;
   }
   .bgfaculty{
-    background-image:linear-gradient(-90deg,rgb(210,210,210),white)
+    background-image:linear-gradient(rgb(220,220,220),white)
+  }
+  .devimg{
+    border:4px solid #FEE715FF;
+    border-radius:15px;
+  }
+  .bgdev{
+    background-color:#101820FF
   }
     </style>
 
@@ -255,7 +262,7 @@ color:rgb(180,180,180);
         <div class="container row mt-5 mx-auto text-center shadow mb-5 bgfaculty rounded">
             <div class="col-lg-3 col-sm-12 my-4">
                 <img src="{{ f.img.url }}"class="faculty" height="180px" width="200px">
-                <pre class="mt-2 text-center text mb-0 facultytextcolor" id="neha">{{ f.name }}</pre>
+                <p class="mt-2 text-center text mb-0 facultytextcolor" id="neha">{{ f.name }}</p>
                 <pre class="text-center facultytextcolor2">{{f.post}}</pre>
             </div>
             <div class="col-lg-9  my-4">
@@ -344,19 +351,19 @@ color:rgb(180,180,180);
 
 
 
-        <div class="container mt-5 text-center shadow p-3 mb-5 bg-warning rounded">
+        <div class="container mt-5 text-center text-white shadow p-3 mb-5 bgdev rounded">
             <h2 class="my-3">Developers</h2>
 
             <div class="row">
 
 
                 <div class="col-lg-3 col-md-5 mx-auto my-4">
-                    <img src="{% static 'img/3.jpg' %} " height="200px" width="200px">
+                    <img src="{% static 'img/3.jpg' %} "class="devimg" height="200px" width="200px">
                 </div>
 
-                <div class="col-lg-3 col-md-5 text-center mx-auto my-3" id="neha1">
-                    <p class="mt-3">Abhnav Gupta</p>
-                    <p id="neha">Second Year<br>Electrical Engineering</p>
+                <div class="col-lg-3 col-md-5  text-center mx-auto my-3" id="neha1">
+                    <p class="mt-3 text">Abhnav Gupta</p>
+                    <p id="neha ">Second Year<br>Electrical Engineering</p>
                     
                 </div>
 
@@ -364,12 +371,12 @@ color:rgb(180,180,180);
 
 
                 <div class="col-lg-3 col-md-5 my-4 mx-auto">
-                    <img src="{% static 'img/3.jpg' %}" height="200px" width="200px">
+                    <img src="{% static 'img/3.jpg' %}"class="devimg" height="200px" width="200px">
                 </div>
 
                 <div class="col-lg-3 col-md-5 text-center mx-auto my-3" id="neha1">
-                    <p class="mt-3">Neha Goyal</p>
-                    <p id="neha">Second Year<br>Chemical Engineering</p>
+                    <p class="mt-3 text">Neha Goyal</p>
+                    <p id="neha ">Second Year<br>Chemical Engineering</p>
                 </div>
 
 
