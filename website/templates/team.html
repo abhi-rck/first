@@ -127,8 +127,8 @@
   }
   .facultytextcolor2{
     color:rgb(130,130,130);
-    text-transform:uppercase;
-    font-size:11px;
+    
+    font-size:12px;
     font-weight:400;
   }
     </style>
@@ -193,8 +193,8 @@
         <div class="container row mt-5 mx-auto text-center shadow mb-5 bg-transparent rounded">
             <div class="col-lg-3 col-sm-12 my-4">
                 <img src="{{ f.img.url }}"class="faculty" height="180px" width="200px">
-                <p class="mt-2 text mb-0 facultytextcolor" id="neha">{{ f.name }}</p>
-                <p class="text-center facultytextcolor2">{{f.post}}</p>
+                <pre class="mt-2 text-center text mb-0 facultytextcolor" id="neha">{{ f.name }}</pre>
+                <pre class="text-center facultytextcolor2">{{f.post}}</pre>
             </div>
             <div class="col-lg-9  my-4">
                 <p class="text-justify facultydesc">{{ f.desc }} </p>
