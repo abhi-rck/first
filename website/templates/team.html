@@ -92,6 +92,7 @@
     color:rgb(192,192,192);
     text-shadow: 2px 2px 4px #000000;
   }
+ 
   .head{
     font-family:sans-serif;
     font-size: 34px;
@@ -106,8 +107,11 @@
     color: rgb(210,210,210);
     text-shadow: 4px 4px 8px #000000;
   }
+ 
+
   .fourthbg{
-          background-color:rgb(0,34,78);
+          
+          background-image:linear-gradient(rgb(0,34,78),black);
         }
   .fourth{
           border:4px solid gold;
@@ -145,8 +149,9 @@
      text-transform:uppercase;
        text-shadow: 2px 2px 4px #000000;
   }
+ 
   .thirdtext2{
-color:rgb(192,192,192);
+color:rgb(180,180,180);
    
      font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
      font-weight:200;
@@ -157,7 +162,36 @@ color:rgb(192,192,192);
 
   }
   .thirdbg{
-    background-color:rgb(25,25,25);
+    background-image:linear-gradient(rgb(25,25,25),black);
+  }
+
+  .secondbg{
+   
+    background-image:linear-gradient(rgb(191, 0, 22),black);
+  }
+   .secondtext2{
+     color:rgb(234, 139, 25);
+     font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-weight:200;
+     font-size:12px;
+     text-transform:uppercase;
+       text-shadow: 2px 2px 4px #000000;
+  }
+   .secondhead{
+   color: rgb(228,212,152);
+    text-shadow: 4px 4px 8px rgb(10,10,10);
+  
+  }
+  .second{
+      border:4px solid rgb(205, 127, 50);
+          border-radius:15px;
+  }
+    .secondtextcolor{
+    color:rgb(225, 160, 25);
+    text-shadow: 2px 2px 4px #000000;
+  }
+  .bgfaculty{
+    background-image:linear-gradient(-90deg,rgb(210,210,210),white)
   }
     </style>
 
@@ -211,14 +245,14 @@ color:rgb(192,192,192);
         </div>
       </nav>
 
-    <div class="container my-5 text-center shadow p-2 bg-light">
+    <div class="container my-5 text-center shadow p-2 bg-light"style="background-image:linear-gradient(rgb(240,240,240),white">
         <h2 mt-3>Faculty Members</h2>
     </div>
 
 
     <div>
         {% for f in fac %}
-        <div class="container row mt-5 mx-auto text-center shadow mb-5 bg-transparent rounded">
+        <div class="container row mt-5 mx-auto text-center shadow mb-5 bgfaculty rounded">
             <div class="col-lg-3 col-sm-12 my-4">
                 <img src="{{ f.img.url }}"class="faculty" height="180px" width="200px">
                 <pre class="mt-2 text-center text mb-0 facultytextcolor" id="neha">{{ f.name }}</pre>
@@ -273,15 +307,15 @@ color:rgb(192,192,192);
 
 
 
-        <div class="container mt-5 text-center shadow p-3 mb-5 bg-danger rounded">
-            <h2 class="my-5">Second Year</h2>
+        <div class="container mt-5 text-center shadow p-3 mb-5 secondbg rounded">
+            <h2 class="my-5 head secondhead">Second Year</h2>
             
             <div class="row">
             {% for i in second %}
                 <div class="col-lg-3 col-md-4  my-4 text-white" id="neha">
-                    <img src="{{i.img.url}}"class="border border-dark" height="200px" width="200px">
-                    <p class="mt-2">{{i.name}}</p>
-                   <pre class="text-center ">{{i.branch}}</pre>
+                    <img src="{{i.img.url}}"class="second" height="200px" width="200px">
+                    <p class="mt-2 mb-0 text secondtextcolor">{{i.name}}</p>
+                   <p class="text-center secondtext2 ">{{i.branch}}</p>
                 </div>
 
  {% endfor %}
@@ -299,7 +333,7 @@ color:rgb(192,192,192);
                 <div class="col-lg-3 col-md-4  my-4" id="neha">
                     <img src="{{i.img.url}}" height="200px" width="200px">
                     <p class="mt-2">{{i.name}}</p>
-                    <pre class="text-center">{{i.branch}}</pre>
+                    <p class="text-center">{{i.branch}}</p>
                 </div>
 
                 
@@ -317,19 +351,20 @@ color:rgb(192,192,192);
 
 
                 <div class="col-lg-3 col-md-5 mx-auto my-4">
-                    <img src="1.jpg" height="200px" width="200px">
+                    <img src="{% static 'img/3.jpg' %} " height="200px" width="200px">
                 </div>
 
                 <div class="col-lg-3 col-md-5 text-center mx-auto my-3" id="neha1">
                     <p class="mt-3">Abhnav Gupta</p>
                     <p id="neha">Second Year<br>Electrical Engineering</p>
+                    
                 </div>
 
 
 
 
                 <div class="col-lg-3 col-md-5 my-4 mx-auto">
-                    <img src="1.jpg" height="200px" width="200px">
+                    <img src="{% static 'img/3.jpg' %}" height="200px" width="200px">
                 </div>
 
                 <div class="col-lg-3 col-md-5 text-center mx-auto my-3" id="neha1">
