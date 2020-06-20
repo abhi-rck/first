@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import seeq,faculty,fourthyear,thirdyear,secondyear,firstyear,achievementss,developers,acphoto,suggest,news
+from .models import seeq,faculty,fourthyear,thirdyear,secondyear,firstyear,achievementss,developers,acphoto,suggest,news,learn
 # Create your views here.
 
 def index(request):
@@ -8,6 +8,17 @@ def index(request):
 
 def events(request):
     return render(request,'event.html')
+
+
+def learning(request):
+    columns=learn.objects.all()
+    eight=learn.objects.filter(col=8)
+    five=learn.objects.filter(col=5)
+    four=learn.objects.filter(col=4)
+    seven=learn.objects.filter(col=7)
+    twelve=learn.objects.filter(col=12)
+    return render(request,'learning.html',{'columns':columns,'eight':eight,'five':five,'four':four,'seven':seven,'twelve':twelve})
+
 
 def newsletter(request):
     collapse=news.objects.all()
@@ -35,10 +46,12 @@ def team(request):
     return render(request,'team.html',{'fac':fac ,'fourth':fourth,'third':third,'second':second,'first':first, 'dev':dev})
 
 def achievements(request):
+    achievement=achievementss.objects.all()
+    l=achievementss.objects.filter(var="left")
+    r=achievementss.objects.filter(var="right")
     photo=acphoto.objects.all()
     n=len(photo)
-    achievement=achievementss.objects.all()
-    return render(request,'achievements.html',{'achievement':achievement ,'photo':photo, 'range':range(0,n)})
+    return render(request,'achievements.html',{'achievement':achievement,'achievementl':l,'achievementr':r,'photo':photo,'range':range(0,n)})
 
 def articles(request):
     return render(request,'articlenew.html')

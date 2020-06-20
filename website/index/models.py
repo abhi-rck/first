@@ -49,7 +49,7 @@ class firstyear(models.Model):
 class achievementss(models.Model):
     name=models.CharField(max_length=50)
     desc=models.TextField()
-    
+    var=models.TextField(default="left")
  
     def _str_(self):
         return str(self.name)
@@ -77,6 +77,14 @@ class suggest(models.Model):
 class news(models.Model):
     heading = models.CharField(max_length=50)
     desc=models.TextField()
+    def __str__(self):
+        return str(self.id)
+
+
+class learn(models.Model):
+    heading=models.TextField()
+    desc=models.TextField()
+    col=models.TextField(default=12)
     def __str__(self):
         return str(self.id)
     
