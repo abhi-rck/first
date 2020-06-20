@@ -4,6 +4,7 @@
 
 <head>
     <!-- Required meta tags -->
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,7 +16,7 @@
 
     <style>
     body{
-        font-family: 'Playfair Display', serif;
+       
     }
         .navbar{
       padding: 0px 8px; 
@@ -133,6 +134,7 @@
   }
   .facultydesc{
     font-size:18px;
+     font-family: 'Playfair Display', serif;
       
   }
   .facultytextcolor2{
@@ -260,7 +262,7 @@ color:rgb(180,180,180);
     
     
             <li class="nav-item px-2">
-              <a class="nav-link" href="#">Photo Gallery</a>
+              <a class="nav-link" href="/alumni">Community</a>
             </li>
             <li class="nav-item active px-2">
               <a class="nav-link" href="/team">Team</a>
@@ -270,12 +272,13 @@ color:rgb(180,180,180);
     
         </div>
       </nav>
-
+{% comment %} Facullty Heading {% endcomment %}
     <div class="container my-5 text-center shadow p-2 bg-light"style="background-image:linear-gradient(rgb(240,240,240),white">
         <h2 mt-3 class=" head fachead">Faculty Members</h2>
     </div>
 
 
+    {% comment %} Faculty {% endcomment %}
     <div>
         {% for f in fac %}
         <div class="container row mt-5 mx-auto text-center shadow mb-5 bgfaculty rounded">
@@ -290,9 +293,9 @@ color:rgb(180,180,180);
         </div>
         {% endfor %}
     </div>
+    
 
-
-    <div>
+{% comment %} Fourth Year {% endcomment %}
         
         <div class="container mt-5 text-center shadow p-3 mb-5  rounded fourthbg">
             <h2 class="my-5 head fourthhead">Final Year</h2>
@@ -304,16 +307,13 @@ color:rgb(180,180,180);
                     <p class="mt-2 mb-0 text fourthtextcolor">{{i.name}}</p>
                     <p class="text-center fourthtext2">{{i.branch}}</p>
                 </div>
-
-                    {% endfor %}
+              {% endfor %}
             </div>
-         
-
         </div>
       
 
 
-
+{% comment %} Third Year {% endcomment %}
 
         <div class="container mt-5 text-center shadow p-3 mb-5 thirdbg rounded">
             <h2 class="my-5 head thirdhead">Third Year</h2>
@@ -327,12 +327,11 @@ color:rgb(180,180,180);
                 </div>
             {% endfor %}
             </div>
-     
         </div>
         
 
 
-
+{% comment %} Second Year {% endcomment %}
         <div class="container mt-5 text-center shadow p-3 mb-5 secondbg rounded">
             <h2 class="my-5 head secondhead">Second Year</h2>
             
@@ -344,42 +343,31 @@ color:rgb(180,180,180);
                    <p class="text-center secondtext2 ">{{i.branch}}</p>
                 </div>
 
- {% endfor %}
-            </div>
-
-               
+            {% endfor %}
+            </div>     
         </div>
 
 
 
     
 
-
+{% comment %} Developers {% endcomment %}
 
         <div class="container mt-5 text-center text-white shadow p-3 mb-5 bgdev rounded">
             <h2 class="my-5 devhead head"style="">Developers</h2>
 
             <div class="row">
 
-{% for i in dev %}
+                {% for i in dev %}
                 <div class="col-lg-3 col-md-5 mx-auto my-4">
                     <img src="{{i.img.url}}"class="devimg" height="200px" width="200px">
                 </div>
-
                 <div class="col-lg-3 col-md-5 my-auto text-center mx-auto my-3" id="neha1">
                     <p class="mt-3 mb-0 text">{{i.name}}</p>
-                    <p id="neha "class="devtext2">{{i.year}}<br>{{i.branch}}</p>
-                    
+                    <p id="neha "class="devtext2">{{i.year}}<br>{{i.branch}}</p>    
                 </div>
                 {% endfor %}
-
-
-
-
-
-
             </div>
-
         </div>
 
 

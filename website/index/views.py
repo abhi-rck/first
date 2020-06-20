@@ -36,3 +36,6 @@ def achievements(request):
 
 def articles(request):
     return render(request,'articlenew.html')
+
+def alumni(request):
+    return render(request,'alumni.html')
