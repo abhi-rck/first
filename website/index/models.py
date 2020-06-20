@@ -63,5 +63,19 @@ class developers(models.Model):
     def __str__(self):
         return self.name
 
+
+class acphoto(models.Model):
+    img=models.ImageField()
+
+class suggest(models.Model):
+    name=models.CharField(max_length=50)
+    suggestion=models.TextField()
+    def __str__(self):
+        return str(self.id)
+    
+    
+    
+
+
     
 

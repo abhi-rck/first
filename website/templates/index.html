@@ -254,37 +254,33 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Suggestion Form</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <form action="" class="text-dark">
+              <form action="suggestion" method="POST" class="text-dark">
+              {% csrf_token %}
                 <div class="form-group row">
-                  <label for="inputEmail3" class="col-sm-3 col-form-label">Name</label>
+                  <label for="name" class="col-sm-3 col-form-label">Name</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Your Name">
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
-                  <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Your Email Id.">
-                  </div>
-                </div>
+              
                 <div class="form-group row">
                   <label for="inputSuggest" class="col-sm-6 col-form-label">Any Suggestions</label>
                   <div class="col-sm-12">
-                    <textarea class="form-control" id="inputSuggest"
+                    <textarea class="form-control" id="inputSuggest" name="suggest" required
                       placeholder="Write your suggestion here!"></textarea>
                   </div>
                 </div>
 
 
                 <div class="form-group row ">
-                  <div class="col-sm-12 text-center">
-                    <button type="submit" class=" btn btn-dark">Submit</button>
+                  <div class="col-sm-12 ">
+                    <button type="submit " class=" btn btn-dark">Submit</button>
                   </div>
                 </div>
               </form>
