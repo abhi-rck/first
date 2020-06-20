@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import seeq,faculty,fourthyear,thirdyear,secondyear,firstyear,achievementss,developers,acphoto,suggest
+from .models import seeq,faculty,fourthyear,thirdyear,secondyear,firstyear,achievementss,developers,acphoto,suggest,news
 # Create your views here.
 
 def index(request):
@@ -8,6 +8,10 @@ def index(request):
 
 def events(request):
     return render(request,'event.html')
+
+def newsletter(request):
+    collapse=news.objects.all()
+    return render(request,'newsletter.html',{'collapse':collapse})
 
 def register(request):
     if request.method == "POST":

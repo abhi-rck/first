@@ -72,7 +72,13 @@ class suggest(models.Model):
     suggestion=models.TextField()
     def __str__(self):
         return str(self.id)
-    
+
+
+class news(models.Model):
+    heading = models.CharField(max_length=50)
+    desc=models.TextField()
+    def __str__(self):
+        return str(self.id)
     
     
 
