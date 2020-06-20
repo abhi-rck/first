@@ -11,5 +11,6 @@ urlpatterns = [
     path("articles",views.articles,name='articlepage'),
     path("alumni",views.alumni,name='alumnipage'),
     path("suggestion",views.suggestion,name='suggestionsubmission'),
-    path("newsletter",views.newsletter,name='newletterpage')
+    path("newsletter",views.newsletter,name='newletterpage'),
+    path("learning",views.learning,name='peerlearning-page')
 ]

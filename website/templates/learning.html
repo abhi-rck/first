@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 
@@ -72,8 +74,8 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark " >
         <div>
-          <img src="Mnit_logo.png" height="50px" width="50px" class="mr-auto" id="iamge">
-          <img src="EC Logo.png" height="52px" width="52px" class="mr-auto ml-1" id="iamge">
+          <img src="{% static 'Mnit_logo.png' %}" height="50px" width="50px" class="mr-auto" id="iamge">
+          <img src="{% static 'EC Logo.png' %}" height="52px" width="52px" class="mr-auto ml-1" id="iamge">
        </div>
       
        <div class="mr-auto ml-2 text-white">
@@ -88,23 +90,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto ">
             <li class="nav-item active pr-1">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
             </li>
     
             <li class="nav-item px-2">
-              <a class="nav-link" href="event.html">Events</a>
+              <a class="nav-link" href="/event">Events</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="achievements.html">Achievements</a>
+              <a class="nav-link" href="/achievements">Achievements</a>
             </li>
     
     
     
             <li class="nav-item px-2">
-              <a class="nav-link" href="#">Photo Gallery</a>
+              <a class="nav-link" href="/alumni">Community</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="team.html">Team</a>
+              <a class="nav-link" href="/team">Team</a>
             </li>
     
           </ul>
@@ -165,28 +167,43 @@
     <div class="container-fluid shadow-lg p-3 mb-5 bg-light bg rounded ">
         <h1 class="my-5 ">Latest Disscusions </h1>
         <div class="row  p-2 text-justify">
-            <div class="col-lg-8 mx-auto border border-dark p-3" style="border">
-                <h4>Energy Club Peer learning session 1,(January 25th, 2020) was presented by Mr.Nagraj Deshmukh and titled 'STORY OF PLASTIC': </h4>
-                <p>The session included journey of plastic from its invention to till date.The history of invention,uses,huge dependence and reasons  regarding plastics were thoroughly discussed.Problems arising out of this and impact on marine life(garbage patches in the oceans) and ways to reduce the single use plastic in the college campus were key elements of discussion.
-                </p>
-            </div>
-            <div class="col-lg-4 mx-auto border border-dark p-3" style="border">
-                <h4>Energy Club Peer  Learning Session 2 ,(January 31st,2020)was presented by Mr.Siddharth parashar and titled 'HDPE and PET CONTAINERS':</h4>
-                <p>This session was focused upon most common plastic forms of HIGH DENSITY POLYETHYLENE (HDPE) and POLY ETHYLENE TEREPHALATE(PET), their gradually increasing usage in daily life,their properties, limitations and substitute.Light on the challenges regarding their recycling was the key element of session.The solution for use of Styrofoam was discussed and many steps were decided for execution in the college in gradual manner.
-                </p>
-            </div>
-            <div class="col-lg-5 mx-auto border border-dark p-3" style="border">
-                <h4>Energy Club Peer Learning Session 3,(January 31st,2020) was presented by Mr.Shiva and titled 'THERMOELECTRIC GENERATOR':</h4>
-                <p>This session was based on clean energy which is the need of this hour throughout the world.The  working, construction, properties, applications and future viability for small applications were thoroughly discussed in which was simplified with the help of electronic devices and their applications for TEG.The members were asked to find its suitable applications in the campus.
-                </p>
-            </div>
-            <div class="col-lg-7 mx-auto border border-dark p-3" style="border">
-                <h4>Energy Club Peer Learning Session 4(14th February,2020)was presented by Mr.Raghav saluja and titled 'MATERIALS OF SUSTAINABILITY': </h4>
-                <p>The session was mainly focused upon the sustainable development,Review of different currently adopted sustainability metrics,Development of exergy based indicator for evaluating eco-efficiency,Examples of application of exergy based eco-efficiency metric,Assessment of sustainability performance of Australian aluminium industry.
-                </p>
-            </div>
 
+        {% for i in columns %}
+
+          {% if i in eight %}
+            <div class="col-lg-8 mx-auto border border-dark p-3" style="border">
+                <h4>{{i.heading}}</h4>
+                <p>{{i.desc}}
+                </p>
+            </div>
             
+            {% elif i in four %}
+            <div class="col-lg-4 mx-auto border border-dark p-3" style="border">
+                <h4>{{i.heading}}</h4>
+                <p>{{i.desc}}
+                </p>
+            </div>
+            
+            {% elif i in five %}
+            <div class="col-lg-5 mx-auto border border-dark p-3" style="border">
+                <h4>{{i.heading}}</h4>
+                <p>{{i.desc}}</p>
+            </div>
+            
+            {% elif i in seven %}
+            <div class="col-lg-7 mx-auto border border-dark p-3" style="border">
+                <h4>{{i.heading}}</h4>
+                <p>{{i.desc}}
+                </p>
+            </div>
+          
+          {% else %} 
+            <div class="col-lg-12 mx-auto border border-dark p-3" style="border">
+                <h4>{{i.heading}}</h4>
+                <p>{{i.desc}}</p>
+            </div>
+          {% endif %}
+         {% endfor %}   
 
 
         </div>
